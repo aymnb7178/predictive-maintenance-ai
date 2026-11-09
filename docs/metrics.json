@@ -1,0 +1,133 @@
+{
+  "n_units": {
+    "train": 36,
+    "val": 12,
+    "test": 12
+  },
+  "rul": {
+    "model": {
+      "mae": 8.726219198378686,
+      "rmse": 14.364846954293485
+    },
+    "naive_age_baseline": {
+      "mae": 18.275029518342084,
+      "rmse": 31.299568200257887
+    },
+    "model_near_failure": {
+      "mae": 7.493506208133717,
+      "rmse": 12.82895334939292
+    },
+    "naive_near_failure": {
+      "mae": 27.16826047358835,
+      "rmse": 35.78066057363216
+    },
+    "groupkfold_mae": {
+      "folds": [
+        8.826811917340878,
+        7.548417051048594,
+        8.991827067561685,
+        8.05951180963079
+      ],
+      "mean": 8.356641961395487,
+      "std": 0.5843872302168336
+    }
+  },
+  "classification": {
+    "threshold": 0.5,
+    "precision": 0.7917620137299771,
+    "recall": 0.9301075268817204,
+    "f1": 0.8553770086526576,
+    "pr_auc": 0.9496915695346055,
+    "prevalence": 0.13631366801026018,
+    "age_baseline_pr_auc": 0.46305075614906815,
+    "at_0.5": {
+      "threshold": 0.5,
+      "precision": 0.7917620137299771,
+      "recall": 0.9301075268817204,
+      "f1": 0.8553770086526576,
+      "pr_auc": 0.9496915695346055,
+      "prevalence": 0.13631366801026018
+    }
+  },
+  "cost_policies": [
+    {
+      "policy": "cost-optimal (val)",
+      "threshold": 0.5,
+      "false_alarm_rows": 91,
+      "missed_rows": 26,
+      "cost": 351.0
+    },
+    {
+      "policy": "F1-optimal (val)",
+      "threshold": 0.92,
+      "false_alarm_rows": 26,
+      "missed_rows": 56,
+      "cost": 586.0
+    },
+    {
+      "policy": "default 0.5",
+      "threshold": 0.5,
+      "false_alarm_rows": 91,
+      "missed_rows": 26,
+      "cost": 351.0
+    },
+    {
+      "policy": "never alarm",
+      "threshold": 1.01,
+      "false_alarm_rows": 0,
+      "missed_rows": 372,
+      "cost": 3720.0
+    }
+  ],
+  "alarms": {
+    "risk": {
+      "n_units": 12,
+      "ok": 11,
+      "missed": 0,
+      "premature": 1,
+      "median_lead": 35.0,
+      "min_lead": 9.0,
+      "max_lead": 50.0
+    },
+    "iforest": {
+      "n_units": 12,
+      "ok": 5,
+      "missed": 0,
+      "premature": 7,
+      "median_lead": 66.0,
+      "min_lead": 39.0,
+      "max_lead": 76.0
+    },
+    "cusum": {
+      "n_units": 12,
+      "ok": 3,
+      "missed": 0,
+      "premature": 9,
+      "median_lead": 84.0,
+      "min_lead": 73.0,
+      "max_lead": 90.0
+    },
+    "risk_by_fault_mode": {
+      "gradual": {
+        "n_units": 11,
+        "ok": 10,
+        "missed": 0,
+        "premature": 1,
+        "median_lead": 36.5,
+        "min_lead": 30.0,
+        "max_lead": 50.0
+      },
+      "sudden": {
+        "n_units": 1,
+        "ok": 1,
+        "missed": 0,
+        "premature": 0,
+        "median_lead": 9.0,
+        "min_lead": 9.0,
+        "max_lead": 9.0
+      }
+    }
+  },
+  "cusum_h": 4.5,
+  "threshold": 0.5
+}
